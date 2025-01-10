@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Border Color</title>
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out, border 1s ease-in-out;
+            border: 20px solid transparent; 
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const imageArray = [
+            {image: 'first.jpg', borderColor: '#1579FF'},
+            {image: 'jerry1.png', borderColor: '#30D5C8'},
+            {image: 'tom_jerry.png', borderColor: '#039CFF'},
+            {image: 'final.jpg', borderColor: '#33D1CC'}
+        ];
+        
+        let i = 0;
+
+        const change = () => {
+            document.body.style.backgroundImage = `url(${imageArray[i].image})`;
+            document.body.style.borderColor = imageArray[i].borderColor;
+            i = (i + 1) % imageArray.length;
+        };
+
+        setInterval(change, 1000);
+    </script>
+</body>
+</html>
